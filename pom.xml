@@ -145,35 +145,6 @@
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 			</plugin>
-
-
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.codehaus.cargo</groupId>
-            <artifactId>cargo-maven2-plugin</artifactId>
-            <configuration>
-                <container>
-                    <containerId>tomcat9x</containerId>
-                    <!-- Other container configuration -->
-                </container>
-                <configuration>
-                    <type>runtime</type>
-                    <properties>
-                        <cargo.remote.username>admin</cargo.remote.username>
-                        <cargo.remote.password>Y123</cargo.remote.password>
-                        <!-- Other configuration properties -->
-                    </properties>
-                </configuration>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-
-
-
-
-
 			
 </plugins>
 	</build>
