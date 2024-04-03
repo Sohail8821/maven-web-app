@@ -1,0 +1,26 @@
+node {
+echo "The job name is : ${JOB_NAME}"
+echo "The Current Build Number is : ${BUILD_NUMBER}"
+echo "The Current Build name is  : ${BUILD_DISPLAY_NAME}"
+echo "The Jenkins Home Directory is  : ${JENKINS_HOME}"
+echo "The Jenkins Home URL is  : ${JENKINS_URL}"
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])    
+def mavenHome = tool 'NewMavenServer'
+stage('chcekout code') {
+git credentialsId: '1e23d68c-c29b-4034-8007-5b9359ccbb53', url: 'https://github.com/Sohail8821/maven-web-app.git'
+}
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+stage('Execute Sonar Qube'){
+sh "${mavenHome}/bin/mvn clean sonar:sonar"
+}
+stage('Upload to Nexus'){
+sh "${mavenHome}/bin/mvn clean deploy"
+}
+stage('Deploy on Tomcat'){
+sshagent(['0b37f2ca-f9be-4bbe-9c2a-a10009909857']) {
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.26.204:/opt/tomcat/webapps/"
+}
+}
+}
