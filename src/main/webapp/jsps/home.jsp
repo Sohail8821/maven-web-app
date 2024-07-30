@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to PinnaCloud </h1>
-<h1 align="center"> PinnaCloud is very Good Training center for DevOps in UK</h1>
+<h1 align="center">Welcome to DevOps Learning - Sohail Abbas </h1>
+<h1 align="center"> DevOps CI/CD Pipeline </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
