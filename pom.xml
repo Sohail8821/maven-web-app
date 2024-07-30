@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.93.227:9000/</sonar.host.url>
+		<sonar.host.url>http://172.31.20.96:9000/</sonar.host.url>
 		<sonar.login>squ_59eedfdc82977c482032666ea8aa52a5dca4b577</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -96,14 +96,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>PinnaCloud Releases Nexus Repository</name>
-	      <url>http://172.31.87.209:8081/repository/repo-1-release/</url>
+	      <name>Sohail Releases Nexus Repository</name>
+	      <url>http://172.31.30.38:8081/repository/repo-2/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>PinnaCloud Snapshot Nexus Repository </name>
-	      <url>http://172.31.87.209:8081/repository/repo-1-snapshot/</url>
+	      <name>Sohail Snapshot Nexus Repository </name>
+	      <url>http://172.31.30.38:8081/repository/repo-1/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
